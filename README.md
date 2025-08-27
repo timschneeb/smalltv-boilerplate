@@ -3,7 +3,7 @@
 >[!NOTE]
 > Ported to the Geekmagic S3 (ESP32-S3).
 > 
-> See also: [github.com/GeekMagicClock/GeekMagic-S3]
+> See also: https://github.com/GeekMagicClock/GeekMagic-S3
 
 
 
