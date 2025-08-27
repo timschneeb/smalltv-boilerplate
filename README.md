@@ -1,5 +1,12 @@
 # SmallTV Boilerplate
 
+>[!NOTE]
+> Ported to the Geekmagic S3 (ESP32-S3).
+> 
+> See also: [github.com/GeekMagicClock/GeekMagic-S3]
+
+
+
 This project is a boilerplate designed for easy development of applications for the SmallTV (most likely clone) product using the ESP8266 microcontroller. It provides a structured framework to manage multiple apps and hardware components, enabling rapid prototyping and development.
 
 ## Features
