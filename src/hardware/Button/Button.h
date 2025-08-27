@@ -1,10 +1,13 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
+#define BUTTON2_HAS_STD_FUNCTION
+
+#include <Button2.h>
 #include <OneButton.h>
 
 #ifndef TOUCH_PIN
-#define TOUCH_PIN 16
+#define TOUCH_PIN 9
 #endif
 /**
  * @class button
@@ -14,12 +17,27 @@
  * @note The default pin for the touch sensor is defined as TOUCH_PIN (GPIO 16).
  * @ingroup Hardware
  */
-class button : public OneButton {
- public:
-  button(uint8_t pin = TOUCH_PIN, bool activeLow = true, bool pullupActive = true)
-      : OneButton(pin, activeLow, pullupActive) {}
+
+class button {
+private:
+    Button2 button2;
+    int threshold = 1500; // ESP32S3
+    byte buttonState = HIGH;
+    callbackFunction onClick;
+    callbackFunction onLongPress;
+
+public:
+    button();
+    void tick(void);
+
+    // save function for click event
+    void attachClick(callbackFunction newFunction);
+
+    void attachLongPressStart(callbackFunction newFunction);
+
+    bool touchdetected = false;
 };
 
 extern button Button;
 
-#endif  // BUTTON_H
+#endif // BUTTON_H
