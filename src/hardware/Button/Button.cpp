@@ -35,7 +35,7 @@ button::button()
     button2.setButtonStateFunction([this] { return buttonState; });
     button2.setClickHandler([this](Button2&) { if (onClick != nullptr) onClick(); });
     button2.setLongClickTime(800);
-    button2.setLongClickHandler([this](Button2&) { if (onLongPress != nullptr) onLongPress(); });
+    button2.setLongClickDetectedHandler([this](Button2&) { if (onLongPress != nullptr) onLongPress(); });
     button2.begin(BTN_VIRTUAL_PIN);
 }
 
